@@ -2,7 +2,7 @@
   "name": "rn-pdf-reader-js",
   "version": "4.1.1",
   "description": "PDF reader for Expo",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "Xavier Carpentier <xcapetir@gmail.com> (https://xaviercarpentier.com/)",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "start": "npm run config:dev && expo start -c",
     "tsc": "node_modules/.bin/tsc --noEmit",
     "bundle": "./scripts/gen_bundle_string.js",
-    "build": "rm -rf lib/ && node_modules/.bin/tsc",
+    "build": "rm -rf lib/ && node_modules/.bin/tsc && npm run config:npm",
     "config:dev": "json -I -f package.json -e 'this.main=\"node_modules/expo/AppEntry.js\"'",
     "config:npm": "json -I -f package.json -e 'this.main=\"lib/index.js\"'",
     "lint": "tslint --project .",
@@ -67,6 +67,5 @@
   },
   "engines": {
     "yarn": "YARN NO LONGER USED - use npm instead."
-  },
-  "files": ["*"]
+  }
 }
