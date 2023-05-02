@@ -10,7 +10,7 @@
     "start": "npm run config:dev && expo start -c",
     "tsc": "node_modules/.bin/tsc --noEmit",
     "bundle": "./scripts/gen_bundle_string.js",
-    "build": "rm -rf lib/ && node_modules/.bin/tsc && npm run config:npm",
+    "build": "rm -rf lib/ && node_modules/.bin/tsc",
     "config:dev": "json -I -f package.json -e 'this.main=\"node_modules/expo/AppEntry.js\"'",
     "config:npm": "json -I -f package.json -e 'this.main=\"lib/index.js\"'",
     "lint": "tslint --project .",
@@ -18,7 +18,7 @@
     "prepublishOnly": "npm run verify && npm run config:npm",
     "postpublish": "npm run config:dev",
     "cleaning": "rm -rf node_modules && rm -f package-lock.json && npm cache clean && npm install && watchman watch-del-all && rm -fr $TMPDIR/react-*",
-    "prepare": "npm run build"
+    "prepare": "npm run build && npm run config:npm"
   },
   "keywords": [
     "React-Native",
