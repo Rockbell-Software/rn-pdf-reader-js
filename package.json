@@ -17,8 +17,7 @@
     "verify": "npm run lint && npm run tsc && npm run build",
     "prepublishOnly": "npm run verify && npm run config:npm",
     "postpublish": "npm run config:dev",
-    "cleaning": "rm -rf node_modules && rm -f package-lock.json && npm cache clean && npm install && watchman watch-del-all && rm -fr $TMPDIR/react-*",
-    "prepare": "npm run build && npm run config:npm"
+    "cleaning": "rm -rf node_modules && rm -f package-lock.json && npm cache clean && npm install && watchman watch-del-all && rm -fr $TMPDIR/react-*"
   },
   "keywords": [
     "React-Native",
